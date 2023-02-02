@@ -28,6 +28,7 @@ body {
 .contenedor {
     max-width: 120rem;
     width: 90%;
+    width: min(90%, 120rem); /* Aplica alguno de los 2 valores */
     margin: 0 auto;
 }
 
@@ -93,6 +94,10 @@ img {
     .header__texto {
         margin-top: 15rem;
     }
+}
+
+.barra {
+    padding-top: 4rem;
 }
 
 @media (min-width: 768px) {
@@ -197,4 +202,41 @@ img {
 .widget-curso__label,
 .widgetr-curso__info {
     font-size: 2rem;
+}
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem ;
+    margin-top: 4rem;
+}
+
+/* sobre nosotros */
+
+@media (min-width: 768px) {
+    /* .sobre-nosotros {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto {
+        flex-basis: 50%;
+    } */ /* Forma 1 */
+
+    /* .sobre-nosotros {
+        display: flex;
+        justify-content: space-between;
+    }   
+    .sobre-nosotros__texto {
+        flex: 0 0 calc( 50% - 1rem );
+    }
+    .sobre-nosotros__imagen {
+        flex: 0 0 calc( 50% - 1rem );
+    } */ /* Forma 2 */
+
+    .sobre-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    } /* Forma 3 */
 }
